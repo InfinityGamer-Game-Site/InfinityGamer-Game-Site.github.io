@@ -10,7 +10,7 @@ const randomTexts = [
     "did you know? the eiffel tower was originally constructed upside down, but they flipped it over at the last minute because it looked better that way",
     "did you know? if you stare directly at the sun for 10 seconds, you'll gain the ability to see into the future, but only for things that have already happened",
     "did you know? sharks are afraid of rubber ducks and will swim away as soon as they see one",
-    "wisdom why are you selling my site"
+    "Wisdom is so sigma"
 ];
 
 // Function to generate a random number
@@ -85,3 +85,35 @@ box.addEventListener('mouseleave', () => {
     // Reset rotation when mouse leaves the element
     box.style.transform = 'rotateX(0deg) rotateY(0deg)';
 });
+
+window.onload = function() {
+    // Select the image element
+    const image = document.getElementById('infinitylogo');
+    PowerGlitch.glitch(image, {
+  "playMode": "always",
+  "createContainers": true,
+  "hideOverflow": false,
+  "timing": {
+    "duration": 4000,
+    "easing": "ease-in-out"
+  },
+  "glitchTimeSpan": {
+    "start": 0,
+    "end": 0.5
+  },
+  "shake": {
+    "velocity": 15,
+    "amplitudeX": 0.2,
+    "amplitudeY": 0.2
+  },
+  "slice": {
+    "count": 6,
+    "velocity": 15,
+    "minHeight": 0.02,
+    "maxHeight": 0.3,
+    "hueRotate": true
+  },
+  "pulse": false
+});
+};
+

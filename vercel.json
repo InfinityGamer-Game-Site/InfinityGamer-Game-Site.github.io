@@ -1,16 +1,19 @@
 {
-    "redirects": [
-      {
-        "source": "/share/:game",
-        "destination": "/games/display.html?g=:game",
-        "permanent": true
-      }
-    ],
-    "rewrites": [
-      {
-        "source": "/:path*",
-        "destination": "/404.html"
-      }
-    ]
-  }
-  
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/404.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=172800"
+        }
+      ]
+    }
+  ]
+}

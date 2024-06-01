@@ -1,4 +1,4 @@
-const CACHE_NAME = 'my-site-cache-v3';
+const CACHE_NAME = 'my-site-cache-v8';
 const urlsToCache = [
   '/',
   'assets/css/global.css',
@@ -34,6 +34,11 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', event => {
+  // Exclude specific file from caching
+  if (event.request.url.endsWith('assets/js/service-worker.js')) {
+    return fetch(event.request);
+  }
+
   event.respondWith(
     caches.match(event.request)
       .then(response => {
